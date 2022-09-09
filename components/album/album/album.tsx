@@ -29,6 +29,7 @@ const getAlbumsByYear = (data: any[]) => {
 		}
 	});
 
+	console.log(albumsByYear);
 	return albumsByYear;
 };
 
@@ -58,16 +59,21 @@ export const Album = () => {
 				return (
 					<div key={aby.year} className="mb-5">
 						<h1 className="font-bold text-4xl">{aby.year}</h1>
-						<div className="grid grid-cols-3s">
+						<div className="grid grid-cols-3">
 							{aby.albums.map((album) => (
-								<div
-									key={album.id}
-									className="border-dashed border border-black">
-									<Image
-										alt="album cover"
-										width={200}
-										height={200}
-										src={album ? `${(album as any).cover_url}` : ""}></Image>
+								<div key={album.id} className="">
+									<div className="m-4">
+										<Image
+											alt="album cover"
+											width={400}
+											height={400}
+											src={(album as any).cover_url}></Image>
+									</div>
+									<span>
+										<b>{album.name}</b>
+									</span>
+									<br></br>
+									<span>{album.artist_name}</span>
 								</div>
 							))}
 						</div>
