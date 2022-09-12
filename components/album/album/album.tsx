@@ -43,9 +43,6 @@ export const Album = () => {
 		if (!error) {
 			setAlbumsByYear(getAlbumsByYear(data));
 		}
-
-		console.log("DATA: ", data);
-		console.log("ERROR: ", error);
 	}
 
 	const [albumsByYear, setAlbumsByYear] = useState<AlbumByYear[] | null>(null);
@@ -57,23 +54,22 @@ export const Album = () => {
 		<div className="text-center justify-center">
 			{albumsByYear?.map((aby) => {
 				return (
-					<div key={aby.year} className="mb-5">
-						<h1 className="font-bold text-4xl">{aby.year}</h1>
-						<div className="grid grid-cols-3">
+					<div key={aby.year} className="">
+						<h1 className="font-bold text-4xl mb-5 mt-5">{aby.year}</h1>
+						<div className="grid grid-cols-3 mb-[100px]">
 							{aby.albums.map((album) => (
-								<div key={album.id} className="">
+								<div key={album.id} className=" h-[400px] w-[400px] mb-10">
 									<div className="m-4">
 										<Image
 											alt="album cover"
-											width={400}
-											height={400}
+											width={350}
+											height={350}
 											src={(album as any).cover_url}></Image>
+										<div>
+											<b>{album.name}</b>
+										</div>
+										<div>{album.artist_name}</div>
 									</div>
-									<span>
-										<b>{album.name}</b>
-									</span>
-									<br></br>
-									<span>{album.artist_name}</span>
 								</div>
 							))}
 						</div>
@@ -83,28 +79,3 @@ export const Album = () => {
 		</div>
 	);
 };
-
-/* 
-
-							<div className="font-bold">
-										{album ? (album as any).name : ""}
-									</div>
-									<div>{album ? (album as any).artist_name : ""}</div>
-
-	return (
-		<div className="flex flex-col text-center justify-center">
-			{albums?.map((album) => (
-				<div key={album.id} className="mb-4">
-					<Image
-						alt="album cover"
-						width={200}
-						height={200}
-						src={album ? `${(album as any).cover_url}` : ""}></Image>
-					<div className="font-bold">{album ? (album as any).name : ""}</div>
-					<div>{album ? (album as any).artist_name : ""}</div>
-				</div>
-			))}
-		</div>
-
-	);
-*/

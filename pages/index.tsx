@@ -14,7 +14,13 @@ const Home: NextPage = () => {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className="font-bold text-5xl mb-12">Discos</h1>
+				<Image
+					src="/logo-feel-redondo-blanco4.png"
+					alt="logo feel"
+					width={100}
+					height={100}
+				/>
+				<h1 className="font-bold text-xl mt-4 mb-12">Discos</h1>
 				<Album></Album>
 			</main>
 
