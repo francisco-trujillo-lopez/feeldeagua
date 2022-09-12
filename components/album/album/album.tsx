@@ -56,7 +56,7 @@ export const Album = () => {
 				return (
 					<div key={aby.year} className="">
 						<h1 className="font-bold text-4xl mb-5 mt-5">{aby.year}</h1>
-						<div className="grid grid-cols-3 mb-[100px]">
+						<div className="grid grid-cols-1 sm:grid-cols-3 mb-[100px]">
 							{aby.albums.map((album) => (
 								<div key={album.id} className=" h-[400px] w-[400px] mb-10">
 									<div className="m-4">
