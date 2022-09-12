@@ -1,6 +1,6 @@
 // import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { supbase } from "../../../utils/supbaseClient";
+import { supabase } from "../../../utils/supbaseClient";
 import { useEffect, useState } from "react";
 
 interface Album {
@@ -35,7 +35,7 @@ const getAlbumsByYear = (data: any[]) => {
 
 export const Album = () => {
 	async function fetchAlbums() {
-		const { data, error } = await supbase
+		const { data, error } = await supabase
 			.from("discos")
 			.select()
 			.order("year", { ascending: false });
