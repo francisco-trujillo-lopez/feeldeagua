@@ -29,8 +29,9 @@ export default function Layout({ children }: any) {
 								<li className="m-2" key={title}>
 									<Link href={href}>
 										<a
-											className={`flex p-2 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer ${
-												router.asPath === href && "bg-gray-600 font-bold"
+											className={`flex p-2 bg-gray-200 rounded hover:bg-gray-300 hover:text-gray-600 text-black cursor-pointer ${
+												router.asPath === href &&
+												"bg-gray-600 hover:bg-gray-600 font-bold hover:text-white text-white"
 											}`}>
 											{title}
 										</a>

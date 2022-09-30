@@ -1,6 +1,4 @@
-// import { useQuery } from "@tanstack/react-query";
-import Image from "next/image";
-import { supabase } from "../../../utils/supbaseClient";
+import { supabase } from "../../../utils/supabaseClient";
 import { useEffect, useState } from "react";
 import { Album } from "../album/album";
 
@@ -32,8 +30,6 @@ export const AlbumList = () => {
 			.from("albums_duplicate")
 			.select(`*, artists (name)`)
 			.order("id", { ascending: false });
-
-		console.log("ALBUM DATA: ", data);
 
 		if (!error) {
 			setAlbumsByYear(getAlbumsByYear(data));

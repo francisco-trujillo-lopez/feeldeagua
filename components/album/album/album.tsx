@@ -4,7 +4,7 @@ export const Album = ({ album }: any) => {
 	console.log("ALBUM: ", album);
 
 	return (
-		<div className="h-[400px] w-[400px] mb-10">
+		<div className="h-[400px] w-[400px] mb-10 mt-10">
 			<div className="h-[350px] w-[350px] m-4">
 				<picture>
 					<img

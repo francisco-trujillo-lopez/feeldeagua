@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { SocialIcon } from "react-social-icons";
 import { AlbumList } from "../components/album/album-list/album-list";
 
 const Home: NextPage = () => {
@@ -27,13 +28,25 @@ const Home: NextPage = () => {
 				<AlbumList></AlbumList>
 			</main>
 
-			<footer>
-				<a
-					href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer">
-					Powered by{" "}
-				</a>
+			<footer className="flex flex-row justify-center items-center mb-10">
+				<SocialIcon
+					className="ml-4"
+					bgColor="white"
+					fgColor="black"
+					target={"_blank"}
+					url="https://www.instagram.com/feeldeagua"></SocialIcon>
+				<SocialIcon
+					className="ml-4"
+					bgColor="white"
+					fgColor="black"
+					target={"_blank"}
+					url="https://www.youtube.com/user/feeldeagua"></SocialIcon>
+				<SocialIcon
+					className="ml-4"
+					bgColor="white"
+					fgColor="black"
+					target={"_blank"}
+					url="https://www.facebook.com/feeldeagua/"></SocialIcon>
 			</footer>
 		</div>
 	);
