@@ -5,11 +5,13 @@ export const Album = ({ album }: any) => {
 		<div className="h-[400px] w-[400px] mb-10 mt-10">
 			<div className="h-[350px] w-[350px] m-4">
 				<picture>
-					<img
-						alt="album cover"
-						width={350}
-						height={350}
-						src={album.cover_url}></img>
+					<a href={album.file_url} rel="noopener noreferrer">
+						<img
+							alt="album cover"
+							width={350}
+							height={350}
+							src={album.cover_url}></img>
+					</a>
 				</picture>
 			</div>
 			<div>
