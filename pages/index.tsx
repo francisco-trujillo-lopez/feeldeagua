@@ -14,39 +14,44 @@ const Home: NextPage = () => {
 			</Head>
 
 			<main className="flex flex-col justify-center items-center">
-				<div className="flex flex-col justify-center items-center mt-10">
+				<div className="flex flex-col justify-center items-center mt-5 mb-8">
 					<picture>
 						<img
 							src="/logo-feel-redondo-blanco4.png"
 							alt="logo feel"
-							width={100}
-							height={100}
+							width={150}
+							height={150}
 						/>
 					</picture>
-					<h1 className="font-bold text-xl mt-4 mb-12">Discos</h1>
+					<h1 className="font-bold text-2xl mt-4 mb-12">DISCOS</h1>
 				</div>
 				<AlbumList></AlbumList>
 			</main>
 
-			<footer className="flex flex-row justify-center items-center mb-10">
-				<SocialIcon
-					className="ml-4"
-					bgColor="white"
-					fgColor="black"
-					target={"_blank"}
-					url="https://www.instagram.com/feeldeagua"></SocialIcon>
-				<SocialIcon
-					className="ml-4"
-					bgColor="white"
-					fgColor="black"
-					target={"_blank"}
-					url="https://www.youtube.com/user/feeldeagua"></SocialIcon>
-				<SocialIcon
-					className="ml-4"
-					bgColor="white"
-					fgColor="black"
-					target={"_blank"}
-					url="https://www.facebook.com/feeldeagua/"></SocialIcon>
+			<footer className="flex flex-col justify-center items-center mb-10">
+				<div className="flex flex-row justify-center items-center">
+					<SocialIcon
+						className="ml-4"
+						bgColor="white"
+						fgColor="black"
+						target={"_blank"}
+						url="https://www.instagram.com/feeldeagua"></SocialIcon>
+					<SocialIcon
+						className="ml-4"
+						bgColor="white"
+						fgColor="black"
+						target={"_blank"}
+						url="https://www.youtube.com/user/feeldeagua"></SocialIcon>
+					<SocialIcon
+						className="ml-4"
+						bgColor="white"
+						fgColor="black"
+						target={"_blank"}
+						url="https://www.facebook.com/feeldeagua/"></SocialIcon>
+				</div>
+
+				<span className="mt-8 ml-4">feel de agua</span>
+				<span className="mt-1 ml-4">2022</span>
 			</footer>
 		</div>
 	);

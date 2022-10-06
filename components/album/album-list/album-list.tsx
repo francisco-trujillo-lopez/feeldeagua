@@ -21,7 +21,7 @@ export const AlbumList = () => {
 
 	return (
 		<div className="text-center justify-center">
-			<div className="grid grid-cols-1 sm:grid-cols-3 mb-[100px]">
+			<div className="grid grid-cols-1 lg:grid-cols-3 mb-[100px]">
 				{albums!.map((album, index) => {
 					return <Album key={index} album={album} />;
 				})}
