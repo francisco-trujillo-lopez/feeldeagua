@@ -3,9 +3,12 @@
 @tailwind utilities;
 html,
 body {
+  color-scheme: dark;
   padding: 0;
   margin: 0;
   font-family: 'Roboto Mono';
+  color: white;
+    background: black;
 }
 
 a {
@@ -15,14 +18,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }
