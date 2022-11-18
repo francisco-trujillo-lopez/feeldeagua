@@ -5,7 +5,7 @@ import { Album } from "../album/album";
 export const AlbumList = () => {
 	async function fetchAlbums() {
 		const { data, error } = await supabase
-			.from("albums_duplicate")
+			.from("albums")
 			.select(`*, artists (name)`)
 			.order("id", { ascending: false });
 
