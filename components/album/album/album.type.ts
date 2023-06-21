@@ -4,4 +4,5 @@ export default interface Album {
 	year: number;
 	coverUrl: string;
 	fileUrl: string;
+	artistId: number;
 }

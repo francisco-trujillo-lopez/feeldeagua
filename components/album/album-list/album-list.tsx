@@ -14,15 +14,17 @@ export const AlbumList = () => {
 		}
 	}
 
-	const [albums, setAlbums] = useState<any[] | null>([]);
-	useEffect(() => {
-		fetchAlbums();
-	}, []);
+const [albums, setAlbums] = useState<any[] | null>([]);
+useEffect(() => {
+	fetchAlbums();
+}, []);
+
+console.log("albums: ", albums);
 
 	return (
 		<div className="text-center justify-center">
 			<div className="grid grid-cols-1 lg:grid-cols-3 mb-[100px]">
-				{albums!.map((album, index) => {
+				{albums?.map((album: any, index: number) => {
 					return <Album key={index} album={album} />;
 				})}
 			</div>
