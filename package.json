@@ -28,6 +28,8 @@
 		"react-easy-crop": "^4.7.4",
 		"react-filepond": "^7.1.2",
 		"react-hook-form": "^7.43.1",
+		"react-loader-spinner": "^5.3.4",
+		"react-query": "^3.39.3",
 		"react-social-icons": "^5.14.0",
 		"react-use-downloader": "^1.2.4",
 		"tinycolor2": "^1.6.0"

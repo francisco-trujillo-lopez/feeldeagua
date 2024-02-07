@@ -1,10 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { useEffect } from "react";
 import { getAlbumFilename } from "../../utils/album-file-name";
 import useDownloader from "../../utils/useDownloader/use-downloader";
 import { ProgressBar } from "../progress-bar";
-import { Album } from "../album/album/album";
 import { supabase } from "../../utils/supabaseClient";
 
 export type DownloadModalProps = {
@@ -13,7 +11,7 @@ export type DownloadModalProps = {
 	close: () => void;
 };
 
-export function DownloadAlbumModal({
+export function BasicDownloadAlbumModal({
 	opened,
 	close,
 	album,
@@ -29,12 +27,6 @@ export function DownloadAlbumModal({
 	};
 
 	async function updateAlbumDownloads(albumId: number, downloads: number) {
-		console.log("download: ", album.downloads, album.id);
-		/*const { error } = await supabase
-			.from("albums")
-			.update([{ downloads: downloads + 1 }])
-			.eq("id", albumId);*/
-
 		const data = supabase.rpc("incrementDownloads", { albumId: album.id });
 		console.log(data);
 
@@ -52,9 +44,10 @@ export function DownloadAlbumModal({
 						src={album.cover_url || ""}
 					/>
 					<span className="mx-6 p-5">
-						<p>Gracias por descargar este disco de {album?.artists?.name}</p>
 						<p>
-							Si querés apoyarlx, podés comprar sus discos en <a>Bandcamp</a>
+							Gracias por descargar{" "}
+							<span className="font-bold">{album.name}</span> de{" "}
+							<span className="font-bold">{album?.artists?.name}</span>
 						</p>
 					</span>
 				</div>
@@ -64,7 +57,7 @@ export function DownloadAlbumModal({
 					error={error?.errorMessage || ""}
 				/>
 			</div>
-			<div className="flex flex-row items-center justify-end p-7">
+			<div className="flex flex-row items-center justify-center p-7">
 				<button
 					className="mr-1 mb-1 rounded bg-yellow-500 px-6 py-3 text-sm font-bold uppercase text-black shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none active:bg-emerald-600"
 					type="button"
@@ -72,14 +65,6 @@ export function DownloadAlbumModal({
 					disabled={isInProgress && !isComplete}>
 					{isComplete ? "Descargar de nuevo" : "Descargar"}
 				</button>
-				{isInProgress && (
-					<button
-						className="mr-1 mb-1 rounded bg-red-500 px-6 py-3 text-sm font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none active:bg-emerald-600"
-						type="button"
-						onClick={() => cancel()}>
-						Cancelar descarga
-					</button>
-				)}
 			</div>
 		</>
 	);

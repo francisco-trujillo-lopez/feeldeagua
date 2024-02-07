@@ -5,6 +5,7 @@
 @layer components {
 
   .golden-shadow {
+    /*@apply hover:shadow-[0_0_5px_3px_rgba(212,205,155,0.2)] transition-shadow hover:transition-shadow;*/
     @apply hover:shadow-[0_0_5px_3px_rgba(212,205,155,0.2)] transition-shadow hover:transition-shadow;
   }
 
@@ -13,11 +14,11 @@
   }
 
   .gray-shadow:hover {
-    box-shadow: 0 0 10px 3px rgba(212,205,155,0.5);
+    box-shadow: 0 0 10px 3px rgba(212,205,155,0.1);
     transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 200ms;
-    --tw-grayscale: grayscale(95%);
+    --tw-grayscale: grayscale(100%);
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 
@@ -27,7 +28,7 @@
 }
 
 
-html {
+:root, html {
   padding: 0;
   margin: 0;
   background: rgb(15, 13, 14);
